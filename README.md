@@ -1,8 +1,10 @@
 # Jamp
 A simple platformer made with Godot.
 
+A link to `itch.io` will show up here once I've finished it!
+
 ## About
-This is the first game I've ever made, so I decided to try it out with Godot.  As such, I tried to make a dumb little platformer.  It's made mostly of pre-built assets.  Enjoy!
+This is the first game I've ever made, so I decided to try it out with Godot.  As such, I tried to make a dumb little platformer.  It's made mostly of pre-built assets.  Enjoy
 
 ## Credits
 - [Pixel Adventure 1](https://pixelfrog-assets.itch.io/pixel-adventure-1) by [PixelFrog Assets](https://pixelfrog-assets.itch.io/)
