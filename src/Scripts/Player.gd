@@ -8,8 +8,7 @@ const UP_DIRECTION := Vector2.UP
 var _velocity := Vector2.ZERO
 var _curr_direction := 1
 onready var _animated_sprite = get_node("AnimatedSprite")
-var hit := false # One-hit wonder
-var dead := false
+var dead := false # One hit wonder
 var playing := false
 
 export var speed := 300.0
@@ -21,16 +20,11 @@ func _ready():
 
 func _physics_process(_delta: float) -> void:
 	# Play entrance sprites once and do not allow control briefly
-	if not playing and not hit:
+	if not playing:
 		return
 	
 	# We're dead - don't do anything
 	if dead:
-		return
-
-	# Check if we died
-	if hit:
-		dead = true
 		return
 	
 	# Platforming handled here
@@ -108,7 +102,10 @@ func _play_entrance():
 
 # You dead
 func die():
+	dead = true
 	_animated_sprite.play("Dying")
 	yield(_animated_sprite, "animation_finished")
-	emit_signal("player_died")
 	_animated_sprite.queue_free()
+	get_tree().reload_current_scene()
+	Globals.Score = 0
+	Globals.TimeElapsed = 0.0
